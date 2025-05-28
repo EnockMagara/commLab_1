@@ -146,8 +146,37 @@ body {
 .video-container {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+}
+
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(232, 180, 160, 0.1) 0%, transparent 50%);
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.video-container:hover::before {
+    opacity: 1;
+}
+
+.video-container:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 35px 100px rgba(232, 180, 160, 0.2);
 }
 
 .video-placeholder {
@@ -159,12 +188,21 @@ body {
     overflow: hidden;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.video-placeholder:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+.video-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.video-placeholder:hover iframe {
+    transform: scale(1.02);
 }
 
 #campusVideo {
@@ -434,6 +472,15 @@ body {
         text-align: center;
     }
     
+    .video-container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .video-container:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -470,6 +517,19 @@ body {
     
     .nav-link {
         font-size: 0.9rem;
+    }
+    
+    .video-container {
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .video-placeholder {
+        border-radius: 16px;
+    }
+    
+    .video-placeholder iframe {
+        border-radius: 16px;
     }
     
     .hero-title {
