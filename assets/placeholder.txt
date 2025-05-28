@@ -1,0 +1,18 @@
+CAMPUS STORY VIDEO ASSETS
+=========================
+
+Add your video files here:
+
+1. campus-story.mp4 - Your main 90-second video
+2. campus-story.webm - Alternative format for better browser support  
+3. video-poster.jpg - A poster/thumbnail image for the video
+
+The website will work even without these files, but you'll see placeholders until you add your actual content.
+
+For best results, ensure your video is:
+- Exactly 90 seconds long
+- 1920x1080 resolution (16:9 aspect ratio)
+- High quality audio (the story focuses on sound!)
+- Optimized for web playback
+
+You can delete this file once you've added your media assets. 
